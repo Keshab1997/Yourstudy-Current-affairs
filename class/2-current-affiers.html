@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Current Affairs (6 July – 12 July) - Complete</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap');
+
+        /* --- Global Styles & Theming Variables --- */
+        :root {
+            --bg-color: #f0f2f5; --container-bg: #ffffff; --text-color: #333333; --heading-color-1: #d81b60;
+            --heading-color-2: #004d40; --heading-color-3: #1a237e; --accent-color: #c2185b;
+            --accent-color-rgb: 194, 24, 91; --blockquote-bg: #e3f2fd;
+            --blockquote-border: #2196f3; --nav-button-bg: #fff;
+            --nav-button-text: #333; --nav-button-border: #ccc; --nav-active-bg: #d81b60; --box-shadow-color: rgba(0, 0, 0, 0.1);
+            --correct-bg: #2ecc71; --incorrect-bg: #e74c3c;
+        }
+        [data-theme="forest"] {
+            --accent-color: #e67e22; --accent-color-rgb: 230, 126, 34; --bg-color: #f0f4f0; --container-bg: #ffffff; 
+            --text-color: #2c3e50; --heading-color-1: #27ae60; --heading-color-2: #16a085; --heading-color-3: #2c3e50; 
+            --blockquote-bg: #e8f5e9; --blockquote-border: #27ae60;
+        }
+        [data-theme="ocean"] {
+            --accent-color: #e74c3c; --accent-color-rgb: 231, 76, 60; --bg-color: #eef5ff; --container-bg: #ffffff; 
+            --text-color: #34495e; --heading-color-1: #2980b9; --heading-color-2: #3498db; --heading-color-3: #1f618d; 
+            --blockquote-bg: #e4f1fe; --blockquote-border: #3498db;
+        }
+        [data-theme="sunset"] {
+            --accent-color: #bf360c; --accent-color-rgb: 191, 54, 12; --bg-color: #fff3e0; --container-bg: #ffffff; 
+            --text-color: #4e342e; --heading-color-1: #e65100; --heading-color-2: #f57c00; --heading-color-3: #d84315; 
+            --blockquote-bg: #fff8e1; --blockquote-border: #f57c00;
+        }
+        .dark-mode {
+            --accent-color: #f48fb1; --accent-color-rgb: 244, 143, 177; --bg-color: #121212; --container-bg: #1e1e1e; 
+            --text-color: #e0e0e0; --heading-color-1: #bb86fc; --heading-color-2: #03dac6; --heading-color-3: #cf6679; 
+            --blockquote-bg: #2a2a2a; --blockquote-border: #03dac6; --nav-button-bg: #2c2c2c; 
+            --nav-button-text: #e0e0e0; --nav-button-border: #555; --nav-active-bg: #bb86fc; 
+            --box-shadow-color: rgba(255, 255, 255, 0.05); --correct-bg: #00796b; --incorrect-bg: #d32f2f;
+        }
+
+        /* --- Base Layout & Typography --- */
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Hind Siliguri', sans-serif; background-color: var(--bg-color); color: var(--text-color); line-height: 1.8; margin: 0; padding: 20px; transition: background-color 0.3s, color 0.3s; }
+        .container { max-width: 900px; margin: 20px auto; background-color: var(--container-bg); padding: 30px 40px; border-radius: 12px; box-shadow: 0 4px 12px var(--box-shadow-color); transition: background-color 0.3s; }
+        h1, h2 { margin-top: 30px; }
+        h1 { text-align: center; font-size: 2.2em; color: var(--heading-color-1); margin: 0; }
+        h2 { font-size: 2em; color: var(--heading-color-2); border-bottom: 2px solid #e0e0e0; padding-bottom: 10px; }
+        
+        /* --- Header, Footer, Navigation --- */
+        header, footer { text-align: center; max-width: 900px; margin: 0 auto; padding: 20px 0; }
+        .logo { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; box-shadow: 0 4px 12px var(--box-shadow-color); }
+        footer { font-size: 0.9em; opacity: 0.8; }
+        .navigation { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 2px solid #eee; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 10px; }
+        .nav-button { display: inline-block; padding: 10px 15px; border: 1px solid var(--nav-button-border); border-radius: 5px; text-decoration: none; color: var(--nav-button-text); background-color: var(--nav-button-bg); transition: background-color 0.3s, color 0.3s; font-weight: 500; }
+        
+        /* --- Controls (Theme, Dark Mode, Set Selector, Desktop Mode) --- */
+        .controls-wrapper { max-width: 900px; margin: 20px auto; padding: 15px; background-color: var(--container-bg); border-radius: 10px; box-shadow: 0 4px 12px var(--box-shadow-color); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+        .theme-buttons button { padding: 8px 15px; border: 1px solid var(--nav-button-border); background-color: var(--nav-button-bg); color: var(--nav-button-text); border-radius: 5px; cursor: pointer; font-family: 'Hind Siliguri', sans-serif; font-weight: 600; transition: all 0.2s; }
+        .dark-mode-toggle, .desktop-mode-toggle { display: flex; align-items: center; gap: 10px; }
+        .switch { position: relative; display: inline-block; width: 60px; height: 34px; }
+        .switch input { opacity: 0; width: 0; height: 0; }
+        .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #ccc; transition: .4s; border-radius: 34px; }
+        .slider:before { position: absolute; content: ""; height: 26px; width: 26px; left: 4px; bottom: 4px; background-color: white; transition: .4s; border-radius: 50%; }
+        input:checked + .slider { background-color: var(--heading-color-1); }
+        input:checked + .slider:before { transform: translateX(26px); }
+
+        /* --- MCQ Specific Styles --- */
+        #mcqSetSelector { padding: 10px; font-size: 1em; font-family: 'Hind Siliguri', sans-serif; border: 1px solid var(--nav-button-border); border-radius: 5px; background-color: var(--nav-button-bg); color: var(--nav-button-text); }
+        #score-tracker { font-size: 1.2em; font-weight: bold; text-align: right; margin-bottom: 20px; color: var(--heading-color-2); }
+        .mcq-question { margin-bottom: 40px; padding: 20px; border-radius: 10px; border: 2px solid transparent; transition: box-shadow 0.3s, border-color 0.3s; }
+        .mcq-question.active-question { border-color: var(--accent-color); box-shadow: 0 0 15px rgba(var(--accent-color-rgb), 0.5); }
+        .mcq-question h4 { font-size: 1.3em; color: var(--heading-color-3); margin-top: 0; padding: 0; border: none; }
+        .mcq-options { display: grid; grid-template-columns: 1fr; gap: 10px; margin-top: 20px; }
+        @media (min-width: 600px) { .mcq-options { grid-template-columns: 1fr 1fr; } }
+        .mcq-option { padding: 12px 15px; border: 1px solid #ccc; border-radius: 8px; cursor: pointer; transition: background-color 0.3s, border-color 0.3s; font-size: 1.1em; }
+        .mcq-option:hover { border-color: var(--accent-color); background-color: rgba(200, 200, 200, 0.1); }
+        .mcq-question.answered .mcq-option { cursor: not-allowed; pointer-events: none; }
+        .mcq-option.correct { background-color: var(--correct-bg); color: white; border-color: var(--correct-bg); }
+        .mcq-option.incorrect { background-color: var(--incorrect-bg); color: white; border-color: var(--incorrect-bg); }
+        .mcq-explanation { display: none; margin-top: 20px; padding: 15px; background-color: var(--blockquote-bg); border-left: 4px solid var(--blockquote-border); border-radius: 5px; font-size: 1em; }
+        .mcq-explanation strong { color: var(--heading-color-2); }
+        
+        /* --- Utility Styles --- */
+        .scroll-button { position: fixed; bottom: 20px; right: 20px; width: 50px; height: 50px; border-radius: 50%; background-color: var(--heading-color-1); color: white; border: none; font-size: 24px; cursor: pointer; display: none; justify-content: center; align-items: center; box-shadow: 0 4px 8px rgba(0,0,0,0.2); z-index: 1000; }
+        #scrollToBottomBtn { bottom: 80px; background-color: var(--heading-color-2); }
+		.nav-button { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 12px 20px; border-radius: 8px; border: 1px solid transparent; text-decoration: none; font-size: 1rem; font-weight: 600; transition: all 0.3s ease; cursor: pointer; }
+        .nav-button i { font-size: 1.2em; }
+        .nav-button.color-home { background-color: #3498db; color: #ffffff; box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3); }
+        .nav-button.color-home:hover { background-color: #2980b9; transform: translateY(-3px); box-shadow: 0 6px 15px rgba(41, 128, 185, 0.4); }
+        .nav-button.color-home:active { transform: translateY(0); box-shadow: 0 2px 5px rgba(41, 128, 185, 0.3); }
+    </style>
+	<!-- Font Awesome CDN for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body data-theme="default">
+
+    <header>
+        <img src="https://i.ibb.co/3s111Zg/logo.jpg" alt="Logo" class="logo">
+        <h1>সাপ্তাহিক সাম্প্রতিক ঘটনাবলী (6 July – 12 July)</h1>
+    </header>
+
+    <div class="controls-wrapper">
+        <div class="theme-buttons">
+            <button data-theme-name="default">Default</button>
+            <button data-theme-name="forest">Forest</button>
+            <button data-theme-name="ocean">Ocean</button>
+            <button data-theme-name="sunset">Sunset</button>
+        </div>
+        <div class="mcq-controls">
+            <label for="mcqSetSelector">প্রশ্ন সেট: </label>
+            <select id="mcqSetSelector">
+                <option value="1">Set 1 (প্রশ্ন 1-16)</option>
+                <option value="2">Set 2 (প্রশ্ন 17-32)</option>
+                <option value="3">Set 3 (প্রশ্ন 33-48)</option>
+                <option value="4">Set 4 (প্রশ্ন 49-64)</option>
+            </select>
+        </div>
+        <div class="desktop-mode-toggle">
+            <span>ডেস্কটপ মোড</span>
+            <label class="switch">
+                <input type="checkbox" id="desktopModeToggle">
+                <span class="slider"></span>
+            </label>
+        </div>
+        <div class="dark-mode-toggle">
+            <span>দিন/রাত</span>
+            <label class="switch">
+                <input type="checkbox" id="darkModeToggle">
+                <span class="slider"></span>
+            </label>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>সাম্প্রতিক ঘটনাবলীর প্রশ্নাবলী</h2>
+        <div id="score-tracker"></div>
+        <div id="mcq-container">
+            <!-- Questions are dynamically loaded here -->
+        </div>
+    </div>
+
+    <nav class="navigation">
+        <a href="../index.html" class="nav-button color-home">
+            <i class="fa-solid fa-house"></i>
+            <span>হোম</span>
+        </a>
+    </nav>
+    
+    <footer>
+        <p>কপিরাইট © 2024 - সর্বস্বত্ব সংরক্ষিত।</p>
+        <p>ডিজাইন ও ডেভেলপমেন্ট: <strong>কেশব সরকার</strong></p>
+    </footer>
+
+    <button id="scrollToTopBtn" class="scroll-button" title="উপরে যান">↑</button>
+    <button id="scrollToBottomBtn" class="scroll-button" title="নিচে যান">↓</button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // --- AUDIO SETUP ---
+            const correctSound = new Audio('../sounds/correct.mp3');
+            const wrongSound = new Audio('../sounds/wrong.mp3');
+
+            // --- THEME, MODE, SCROLL & DESKTOP VIEW LOGIC ---
+            const themeButtons = document.querySelectorAll('.theme-buttons button');
+            const darkModeToggle = document.getElementById('darkModeToggle');
+            const desktopModeToggle = document.getElementById('desktopModeToggle');
+            const viewportMeta = document.querySelector('meta[name="viewport"]');
+            const body = document.body;
+            const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+            const scrollToBottomBtn = document.getElementById('scrollToBottomBtn');
+
+            function applyTheme(theme) { body.dataset.theme = theme; localStorage.setItem('selected_theme', theme); }
+            function applyMode(mode) {
+                if (mode === 'dark') { body.classList.add('dark-mode'); darkModeToggle.checked = true; } 
+                else { body.classList.remove('dark-mode'); darkModeToggle.checked = false; }
+                localStorage.setItem('selected_mode', mode);
+            }
+            function applyDesktopMode(isDesktop) {
+                if (isDesktop) {
+                    viewportMeta.setAttribute('content', 'width=1200');
+                    desktopModeToggle.checked = true;
+                } else {
+                    viewportMeta.setAttribute('content', 'width=device-width, initial-scale=1.0');
+                    desktopModeToggle.checked = false;
+                }
+                localStorage.setItem('desktop_mode_enabled', isDesktop);
+            }
+
+            const savedTheme = localStorage.getItem('selected_theme');
+            const savedMode = localStorage.getItem('selected_mode');
+            const savedDesktopMode = localStorage.getItem('desktop_mode_enabled') === 'true';
+
+            if (savedTheme) applyTheme(savedTheme);
+            if (savedMode) applyMode(savedMode);
+            if (savedDesktopMode) applyDesktopMode(true);
+
+            themeButtons.forEach(button => button.addEventListener('click', () => applyTheme(button.dataset.themeName)));
+            darkModeToggle.addEventListener('change', () => applyMode(darkModeToggle.checked ? 'dark' : 'light'));
+            desktopModeToggle.addEventListener('change', () => applyDesktopMode(desktopModeToggle.checked));
+
+            window.addEventListener('scroll', () => {
+                const scrollPosition = window.scrollY, windowHeight = window.innerHeight, bodyHeight = document.body.offsetHeight;
+                scrollToTopBtn.style.display = (scrollPosition > 200) ? 'flex' : 'none';
+                scrollToBottomBtn.style.display = (scrollPosition + windowHeight < bodyHeight - 100) ? 'flex' : 'none';
+            });
+            scrollToTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+            scrollToBottomBtn.addEventListener('click', () => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' }));
+
+            // --- INTERACTIVE MCQ LOGIC ---
+            const mcqData = [
+                // Set 1: Questions 1-16
+                { q: "2013-এর পর অষ্টমবারের জন্য, ২০২৫ সালের জুলাই মাসে জাতিসংঘের নিরাপত্তা পরিষদের সভাপতিত্ব গ্রহণ করলো কোন দেশ?", o: ["ভারত", "চীন", "পাকিস্তান", "বাংলাদেশ"], a: 2, ex: "2013 সালের পর অষ্টমবারের মতো, পাকিস্তান ২০২৫ সালের জুলাই মাসে জাতিসংঘের নিরাপত্তা পরিষদের (UNSC) সভাপতিত্ব গ্রহণ করেছে।" },
+                { q: "সম্প্রতি কে ভারতীয় রিজার্ভ ব্যাংক (RBI)-এর নতুন Executive Director হিসেবে নিযুক্ত হয়েছেন?", o: ["উর্জিত প্যাটেল", "রঘুরাম রাজন", "শক্তিকান্ত দাস", "কেশবন্ রামচন্দ্রন্"], a: 3, ex: "কেশবন্ রামচন্দ্রন্ ভারতীয় রিজার্ভ ব্যাংক (RBI)-এর নতুন নির্বাহী পরিচালক (Executive Director) হিসেবে নিযুক্ত হয়েছেন।" },
+                { q: "২০২৫ সালে ১২০ মিলিয়ন ডলার সংগ্রহ করে ভারতের নতুন ইউনিকর্ন কোম্পানি কোনটি?", o: ["Zepto", "Jumbotail", "Meesho", "ShareChat"], a: 1, ex: "Jumbotail নামক B2B ই-কমার্স প্ল্যাটফর্মটি ১২০ মিলিয়ন ডলার বিনিয়োগ সংগ্রহ করে ভারতের নতুন ইউনিকর্ন (১ বিলিয়ন ডলারের বেশি মূল্যবান কোম্পানি) হয়েছে। এটি ২০১৫ সালে আশীষ ঝিনা এবং কার্তিক ভঙ্কটেশ্বরন্ প্রতিষ্ঠা করেন।" },
+                { q: "বিশ্বব্যাপী গ্রাহক সংখ্যার নিরিখে বিশ্বের বৃহত্তম ফিক্সড ওয়্যারলেস অ্যাক্সেস সার্ভিস প্রদানকারী টেলিকম কোম্পানি কোনটি?", o: ["AT&T", "T-Mobile", "Reliance Jio", "Vodafone"], a: 2, ex: "ভারতের Reliance Jio মার্কিন টেলিকম কোম্পানি T-Mobile-কে অতিক্রম করে বিশ্বের বৃহত্তম ফিক্সড ওয়্যারলেস অ্যাক্সেস (FWA) পরিষেবা প্রদানকারী হয়ে উঠেছে।" },
+                { q: "23rd Regional Meeting for States Parties in Asia কোথায় অনুষ্ঠিত হলো?", o: ["নয়া দিল্লীতে", "ব্যাংকক", "টোকিও", "বেইজিং"], a: 0, ex: "The 23rd Regional Meeting for States Parties in Asia to the Chemical Weapons Convention (CWC) নয়া দিল্লীতে অনুষ্ঠিত হয়েছে।" },
+                { q: "ভারতীয় নৌবাহিনীর প্রথম মহিলা হিসেবে ফাইটার পাইলটের প্রশিক্ষণ নিচ্ছেন কে?", o: ["অবনী চতুর্বেদী", "শিবাঙ্গী সিং", "ভাবনা কান্ত", "সাব লেফটেন্যান্ট আস্থা পুনিয়া"], a: 3, ex: "সাব লেফটেন্যান্ট আস্থা পুনিয়া ভারতীয় নৌবাহিনীর ইতিহাসে প্রথম মহিলা হিসেবে ফাইটার পাইলট হওয়ার জন্য প্রশিক্ষণ গ্রহণ করছেন।" },
+                { q: "সম্প্রতি বিশ্ব স্বাস্থ্য সংস্থা (WHO) দ্বারা ম্যালেরিয়া-মুক্ত আমাজন অঞ্চলের প্রথম দেশ কোনটি?", o: ["Brazil", "Peru", "Colombia", "Suriname"], a: 3, ex: "সুরিনাম আমাজন অঞ্চলের প্রথম দেশ হিসেবে WHO-এর কাছ থেকে ম্যালেরিয়া-মুক্ত দেশের স্বীকৃতি পেয়েছে। এর ফলে বিশ্বে ম্যালেরিয়া-মুক্ত দেশ ও অঞ্চলের মোট সংখ্যা ৪৭-এ দাঁড়িয়েছে।" },
+                { q: "২০২১ সালে আফগানিস্তানে তালিবান সরকার ক্ষমতা দখলের পর কোন দেশ প্রথম আনুষ্ঠানিকভাবে স্বীকৃতি দেয়?", o: ["China", "Pakistan", "Russia", "Iran"], a: 2, ex: "২০২১ সালে তালিবানের ক্ষমতা দখলের পর রাশিয়া প্রথম দেশ হিসেবে আফগানিস্তানের তালিবান সরকারকে আনুষ্ঠানিকভাবে স্বীকৃতি দিয়েছে।" },
+                { q: "প্রধানমন্ত্রী মোদীর সরকারী সফরের সময় ভারত ও ত্রিনিদাদ ও টোবাগোর মধ্যে কয়টি চুক্তি স্বাক্ষরিত হয়েছে?", o: ["Four", "Five", "Six", "Seven"], a: 2, ex: "প্রধানমন্ত্রী মোদীর সফরের সময় ভারত এবং ত্রিনিদাদ ও টোবাগোর মধ্যে মোট ছয়টি চুক্তি স্বাক্ষরিত হয়েছে। এর মধ্যে পরিকাঠামো, ফার্মা, ক্রীড়া, শিক্ষা এবং সাংস্কৃতিক বিনিময়ের মতো বিষয়গুলি অন্তর্ভুক্ত রয়েছে।" },
+                { q: "'আমেরিকা পার্টি' নামে একটি নতুন রাজনৈতিক দল কে চালু করার ঘোষণা দিয়েছেন?", o: ["Jeff Bezos", "Mark Zuckerberg", "Elon Musk", "Bill Gates"], a: 2, ex: "টেসলা এবং স্পেসএক্স-এর সিইও ইলন মাস্ক 'আমেরিকা পার্টি' নামে একটি নতুন রাজনৈতিক দল গঠনের ঘোষণা দিয়েছেন।" },
+                { q: "কোন বিশ্বব্যাপী প্রযুক্তি সংস্থা ২৫ বছর পর পাকিস্তানে তার কার্যক্রম বন্ধ করে দিয়েছে?", o: ["Google", "Amazon", "Microsoft", "Apple"], a: 2, ex: "মাইক্রোসফ্ট পাকিস্তানে তার কার্যক্রম শুরু করার ২৫ বছর পর সে দেশে তাদের অফিস বন্ধ করার সিদ্ধান্ত নিয়েছে।" },
+                { q: "বর্তমানে বিশ্বের সবচেয়ে মূল্যবান কোম্পানি কোনটি?", o: ["Apple", "Google", "Microsoft", "Nvidia"], a: 3, ex: "কৃত্রিম বুদ্ধিমত্তার চিপ প্রস্তুতকারক Nvidia অ্যাপলকে ছাড়িয়ে বিশ্বের সবচেয়ে মূল্যবান কোম্পানিতে পরিণত হয়েছে। এর বাজার মূলধন প্রায় ৩.৯২ ট্রিলিয়ন ডলারে পৌঁছেছে।" },
+                { q: "ভারতের কোন মহারত্ন কোম্পানি দুবাইতে তার প্রথম বিদেশী অফিস খুলতে চলেছে?", o: ["ONGC", "NTPC", "SAIL", "BHEL"], a: 2, ex: "Steel Authority of India Limited (SAIL) দুবাইতে তার প্রথম বিদেশী কার্যালয় খোলার পরিকল্পনা করেছে, যার মাধ্যমে মধ্যপ্রাচ্যে তাদের ব্যবসা প্রসারিত হবে।" },
+                { q: "কোথায় 4th International Conference on Financing for Development অনুষ্ঠিত হয়েছে?", o: ["স্পেনের সেভিল", "ব্রাজিলের রিও", "রাশিয়ার সেন্ট পিটার্সবার্গ", "নেদারল্যান্ডসের দ্য হেগ"], a: 0, ex: "The 4th International Conference on Financing for Development (FFD4) স্পেনের সেভিল শহরে অনুষ্ঠিত হয়েছে।" },
+                { q: "ভারতের কোন প্রতিবেশী দেশ হিন্দি পাঠ্যক্রম চালু করেছে?", o: ["মালদ্বীপ", "ভুটান", "নেপাল", "শ্রীলঙ্কা"], a: 3, ex: "শ্রীলঙ্কা তাদের স্কুল শিক্ষাব্যবস্থায় হিন্দি ভাষাকে একটি পাঠ্যক্রম হিসেবে অন্তর্ভুক্ত করেছে।" },
+                { q: "২০২৫ সালের ভারতীয় বিমানবন্দর কর্তৃপক্ষের সমীক্ষায় কোন বিমানবন্দর সর্বোচ্চ গ্রাহক সন্তুষ্টি স্কোর রেকর্ড করেছে?", o: ["Tezpur Airport", "Bhopal Airport", "Rupsi Airport", "Gwalior Airport"], a: 1, ex: "ভারতীয় বিমানবন্দর কর্তৃপক্ষের (AAI) সমীক্ষায় ভোপালের রাজা ভোজ বিমানবন্দর ৫-এর মধ্যে ৫ স্কোর করে সর্বোচ্চ গ্রাহক সন্তুষ্টি অর্জন করেছে।" },
+                
+                // Set 2: Questions 17-32
+                { q: "সরকার জাতীয় সড়কের টানেল, সেতু, ফ্লাইওভারের মতো কাঠামোগুলিতে টোলের হার কত শতাংশ পর্যন্ত হ্রাস করেছে?", o: ["50%", "30%", "25%", "35%"], a: 0, ex: "কেন্দ্রীয় সরকার জাতীয় সড়কের উপর নির্মিত সেতু, টানেল এবং ফ্লাইওভারের মতো কাঠামোগুলোর জন্য টোলের হার ৫০% পর্যন্ত কমিয়েছে।" },
+                { q: "২০২৮ সালের মধ্যে দেশের প্রথম বেসরকারি স্যাটেলাইট ব্রডব্যান্ড পরিষেবা চালু করার জন্য কোন ভারতীয় সংস্থা IN-SPACe থেকে অনুমোদন পেয়েছে?", o: ["ISRO", "Reliance Jio", "Ananth Technologies", "Bharti Airtel"], a: 2, ex: "হায়দ্রাবাদ-ভিত্তিক Ananth Technologies দেশের প্রথম বেসরকারি স্যাটেলাইট ব্রডব্যান্ড পরিষেবা চালু করার জন্য IN-SPACe থেকে অনুমোদন পেয়েছে।" },
+                { q: "কোথায় কেন্দ্রীয় বস্ত্র মন্ত্রক পরবর্তী প্রজন্মের টেক্সটাইল ইকোসিস্টেম স্থাপনের জন্য ₹1,894 কোটি টাকার PM মিত্র পার্ক অনুমোদন করেছে?", o: ["Coimbatore", "Erode", "Virudhunagar", "Salem"], a: 2, ex: "কেন্দ্রীয় বস্ত্র মন্ত্রক তামিলনাড়ুর বিরুধুনগরে একটি পিএম মিত্র পার্ক স্থাপনের জন্য ₹1,894 কোটি টাকা অনুমোদন করেছে।" },
+                { q: "কোন শহর ডিজিটাল প্লেট ইনস্টল করে দেশের প্রথম ডিজিটাল হাউস অ্যাড্রেস প্রকল্প চালু করেছে?", o: ["Bhopal", "Indore", "Pune", "Jaipur"], a: 1, ex: "মধ্যপ্রদেশের ইন্দোর দেশের প্রথম শহর হিসেবে ডিজিটাল হাউস অ্যাড্রেস প্রকল্প চালু করেছে, যেখানে প্রতিটি বাড়ির বাইরে QR কোড সহ ডিজিটাল প্লেট লাগানো হবে।" },
+                { q: "গুজরাটের আনন্দে ভারতের প্রথম জাতীয় স্তরের সমবায় বিশ্ববিদ্যালয়ের ভিত্তিপ্রস্তর কে স্থাপন করেছেন?", o: ["Narendra Modi", "Amit Shah", "Bhupendrabhai Patel", "Droupadi Murmu"], a: 1, ex: "কেন্দ্রীয় স্বরাষ্ট্র ও সহযোগিতা মন্ত্রী অমিত শাহ গুজরাটের আনন্দে ভারতের প্রথম জাতীয় স্তরের সমবায় বিশ্ববিদ্যালয়, ত্রিভুবন সহকারী বিশ্ববিদ্যালয় (TSU)-এর ভিত্তিপ্রস্তর স্থাপন করেছেন।" },
+                { q: "কোন ভারতীয় রাজ্য পাবলিক ডিস্ট্রিবিউশন সিস্টেম (PDS)-এর অধীনে রেশন বিতরণের জন্য আধার-ভিত্তিক ফেস অথেন্টিকেশন (FaceAuth) প্রবর্তনকারী প্রথম রাজ্য হয়েছে?", o: ["Uttarakhand", "Himachal Pradesh", "Punjab", "Haryana"], a: 1, ex: "হিমাচল প্রদেশ দেশের প্রথম রাজ্য হিসেবে PDS রেশন বিতরণের জন্য আধার-ভিত্তিক ফেস অথেন্টিকেশন চালু করেছে।" },
+                { q: "কোন ভারতীয় রাজ্য শহুরে দরিদ্র মহিলাদের ডিজিটালি ক্ষমতায়নের জন্য 'ডিজি-লক্ষ্মী' প্রকল্প চালু করেছে?", o: ["Tamil Nadu", "Maharashtra", "Andhra Pradesh", "Karnataka"], a: 2, ex: "অন্ধ্রপ্রদেশ সরকার শহুরে দরিদ্র মহিলাদের ডিজিটালভাবে ক্ষমতায়নের লক্ষ্যে 'ডিজি-লক্ষ্মী' প্রকল্প চালু করেছে।" },
+                { q: "কোন ভারতীয় রাজ্য BPL পরিবারগুলিকে সহায়তা করার জন্য 'পণ্ডিত দীনদয়াল উপাধ্যায় দারিদ্র্যমুক্ত গ্রাম প্রকল্প' চালু করেছে?", o: ["Rajasthan", "Uttar Pradesh", "Madhya Pradesh", "Gujarat"], a: 0, ex: "রাজস্থান সরকার ৫০০0টি গ্রামে BPL পরিবারগুলিকে সহায়তা করার জন্য ৩০০ কোটি টাকার বাজেটে 'পণ্ডিত দীনদয়াল উপাধ্যায় দারিদ্র্যমুক্ত গ্রাম প্রকল্প' চালু করেছে।" },
+                { q: "কোন শহরে প্রিমিয়াম ভারতীয় আমের প্রচারের জন্য আনুষ্ঠানিকভাবে 'ইন্ডিয়ান ম্যাঙ্গো ম্যানিয়া ২০২৫' উৎসব চালু হয়েছে?", o: ["New Delhi", "Dubai", "Abu Dhabi", "Mumbai"], a: 2, ex: "বিশ্বব্যাপী ভারতীয় আমের প্রচার বাড়ানোর জন্য সংযুক্ত আরব আমিরশাহীর আবু ধাবিতে 'ইন্ডিয়ান ম্যাঙ্গো ম্যানিয়া ২০২৫' উৎসব চালু করা হয়েছে।" },
+                { q: "কোন রাজ্যে কেন্দ্র ১০০ কোটি টাকার ইন্টিগ্রেটেড অ্যাকোয়া পার্ক তৈরির পরিকল্পনা করছে?", o: ["পশ্চিমবঙ্গ", "বিহার", "ওড়িশা", "জম্মু ও কাশ্মীর"], a: 3, ex: "কেন্দ্রীয় সরকার প্রধানমন্ত্রী মৎস্য সম্পদ যোজনার (PMMSY) অধীনে জম্মু ও কাশ্মীরে ১০০ কোটি টাকা ব্যয়ে একটি ইন্টিগ্রেটেড অ্যাকোয়া পার্ক স্থাপনের পরিকল্পনা করেছে।" },
+                { q: "কর্ণাটক সরকার কার নামে বেঙ্গালুরু সিটি ইউনিভার্সিটির নামকরণ করেছে?", o: ["মনমোহন সিং", "कर्पूरी ठाकुर", "সিদ্দারামাইয়া", "অটল বিহারী বাজপেয়ী"], a: 0, ex: "কর্ণাটক সরকার ভারতের প্রাক্তন প্রধানমন্ত্রী ডঃ মনমোহন সিং-এর নামে বেঙ্গালুরু সিটি ইউনিভার্সিটির নামকরণ করেছে।" },
+                { q: "'মুখ্যমন্ত্রী গুরু-শিক্ষা পরম্পরা যোজনা' চালু করেছে কোন রাজ্য সরকার?", o: ["পশ্চিমবঙ্গ", "হরিয়ানা", "উত্তরপ্রদেশ", "বিহার"], a: 3, ex: "বিহার সরকার রাজ্যের ঐতিহ্যবাহী শিল্পকলা ও সংস্কৃতিকে পুনরুজ্জীবিত করার জন্য 'মুখ্যমন্ত্রী গুরু-শিক্ষা পরম্পরা যোজনা' চালু করেছে।" },
+                { q: "‘মুখ্যমন্ত্রী বৃন্দাবন গ্রাম যোজনা’ অনুমোদন করেছে কোন রাজ্য?", o: ["উত্তরপ্রদেশ", "ছত্তিশগড়", "মধ্যপ্রদেশ", "আসাম"], a: 2, ex: "মধ্যপ্রদেশ সরকার গ্রামীণ এলাকায় গো-সংরক্ষণ, জৈব কৃষি এবং পরিবেশ সুরক্ষার লক্ষ্যে 'মুখ্যমন্ত্রী বৃন্দাবন গ্রাম যোজনা' অনুমোদন করেছে।" },
+                { q: "2026 হলিউড ওয়াক অফ ফেম-এর মোশন পিকচার্স বিভাগে সম্মানিত প্রথম ভারতীয় অভিনেত্রী কে হয়েছেন?", o: ["Priyanka Chopra", "Alia Bhatt", "Deepika Padukone", "Kareena Kapoor"], a: 2, ex: "দীপিকা পাড়ুকোন প্রথম ভারতীয় অভিনেত্রী হিসেবে হলিউড ওয়াক অফ ফেম-এ সম্মানিত হতে চলেছেন। তিনি ২০২৬ সালের মোশন পিকচার্স বিভাগে এই সম্মান পাবেন।" },
+                { q: "আর্জেন্টিনা সফরে প্রধানমন্ত্রী নরেন্দ্র মোদী কী বিশেষ সম্মান পেয়েছেন?", o: ["Order of San Martin", "Presidential Medal", "Key to the City of Buenos Aires", "National Honour of Argentina"], a: 2, ex: "প্রধানমন্ত্রী নরেন্দ্র মোদী তাঁর আর্জেন্টিনা সফরের সময় বুয়েনস আইরেস শহরের মেয়রের কাছ থেকে 'Key to the City of Buenos Aires' সম্মানটি গ্রহণ করেছেন।" },
+                { q: "সম্প্রতি ঘানার সর্বোচ্চ রাষ্ট্রীয় সম্মান 'Officer of the Order of the Star' পুরস্কার কাকে দেওয়া হয়েছে?", o: ["প্রধানমন্ত্রী নরেন্দ্র মোদী", "বিরোধী নেতা রাহুল গান্ধী", "প্রয়াত মনমোহন সিং", "বিদেশ মন্ত্রী জয়শঙ্কর"], a: 0, ex: "ঘানার রাষ্ট্রপতি প্রধানমন্ত্রী নরেন্দ্র মোদীকে সে দেশের সর্বোচ্চ রাষ্ট্রীয় সম্মান 'Officer of the Order of the Star of Ghana' প্রদান করেছেন।" },
+
+                // Set 3: Questions 33-48
+                { q: "কে NTPC লিমিটেডের আঞ্চলিক নির্বাহী পরিচালক (পশ্চিম-I) হিসেবে অতিরিক্ত দায়িত্ব গ্রহণ করেছেন?", o: ["Rajesh Kumar Singh", "Anil Kumar Gupta", "Santosh Kumar Takhele", "Pankaj Sharma"], a: 2, ex: "সন্তোষ কুমার তাখেলে NTPC লিমিটেডের আঞ্চলিক নির্বাহী পরিচালক (পশ্চিম-I) হিসেবে অতিরিক্ত দায়িত্ব গ্রহণ করেছেন।" },
+                { q: "রিজার্ভ ব্যাংক ইনোভেশন হাব (RBIH)-এর নতুন চিফ এক্সিকিউটিভ অফিসার (CEO) হিসেবে সম্প্রতি কে নিযুক্ত হয়েছেন?", o: ["Rajesh Bansal", "Rakesh Ranjan", "Sahil Kini", "Parul Goyal"], a: 2, ex: "সাহিল কিনি রিজার্ভ ব্যাংক ইনোভেশন হাব (RBIH)-এর নতুন সিইও হিসেবে নিযুক্ত হয়েছেন। তিনি রাজেশ বনসলের স্থলাভিষিক্ত হলেন।" },
+                { q: "খো খো ফেডারেশন অফ ইন্ডিয়া (KKFI)-এর সভাপতি হিসেবে কে পুনরায় নির্বাচিত হয়েছেন?", o: ["Upkar Singh Virk", "Rajeev Mehta", "Sudhanshu Mittal", "Narinder Batra"], a: 2, ex: "সুধাংশু মিত্তল খো খো ফেডারেশন অফ ইন্ডিয়া (KKFI)-এর সভাপতি হিসেবে পুনরায় নির্বাচিত হয়েছেন।" },
+                { q: "ইন্ডিগোর মূল সংস্থা ইন্টারগ্লোব এভিয়েশন লিমিটেডের বোর্ডে নন-এক্সিকিউটিভ ডিরেক্টর হিসেবে কে নিযুক্ত হয়েছেন?", o: ["Raghuram Rajan", "Amitabh Kant", "Arvind Subramanian", "Bibek Debroy"], a: 3, ex: "প্রধানমন্ত্রীর অর্থনৈতিক উপদেষ্টা পরিষদের চেয়ারম্যান বিবেক দেবরায়কে ইন্ডিগোর মূল সংস্থা ইন্টারগ্লোব এভিয়েশন লিমিটেডের বোর্ডে একজন নন-এক্সিকিউটিভ ডিরেক্টর হিসেবে নিযুক্ত করা হয়েছে।" },
+                { q: "সুনীল জয়বন্ত কদম সম্প্রতি কোন ভারতীয় আর্থিক নিয়ন্ত্রক সংস্থার নির্বাহী পরিচালক হিসেবে নিযুক্ত হয়েছেন?", o: ["Reserve Bank of India (RBI)", "Insurance Regulatory and Development Authority of India (IRDAI)", "Securities and Exchange Board of India (SEBI)", "Pension Fund Regulatory and Development Authority (PFRDA)"], a: 2, ex: "সুনীল জয়বন্ত কদমকে সিকিউরিটিজ অ্যান্ড এক্সচেঞ্জ বোর্ড অফ ইন্ডিয়া (SEBI)-এর নতুন নির্বাহী পরিচালক হিসেবে নিয়োগ করা হয়েছে।" },
+                { q: "নেভাল এভিয়েশনের ফাইটার শাখায় যোগ দানকারী প্রথম মহিলা কে?", o: ["Major Abhilasha", "Sub Lt Aastha Poonia", "Lt Shivangi Singh", "Flight Lt Avani Chaturvedi"], a: 1, ex: "সাব লেফটেন্যান্ট আস্থা পুনিয়া নেভাল এভিয়েশনের ফাইটার স্ট্রিমে যোগদানকারী প্রথম মহিলা হয়ে ইতিহাস সৃষ্টি করেছেন।" },
+                { q: "International Cricket Council (ICC)-এর নতুন প্রধান নির্বাহী কর্মকর্তা (CEO) হিসেবে কে নিযুক্ত হয়েছেন?", o: ["Jay Shah", "Manu Sawhney", "Sanjog Gupta", "Geoff Allardice"], a: 2, ex: "সঞ্জোগ গুপ্তা জিওফ অ্যালারডাইসের স্থলাভিষিক্ত হয়ে আন্তর্জাতিক ক্রিকেট কাউন্সিল (ICC)-এর নতুন সিইও হিসেবে নিয়োগ পেয়েছেন।" },
+                { q: "জেনিফার সিমন্স কোন দেশের প্রথম মহিলা রাষ্ট্রপতি হয়ে ইতিহাস তৈরি করেছেন?", o: ["Guyana", "Suriname", "Venezuela", "Chile"], a: 1, ex: "জেনিফার সিমন্স সুরিনামের প্রথম মহিলা রাষ্ট্রপতি নির্বাচিত হয়েছেন, যা দক্ষিণ আমেরিকার এই দেশটির জন্য একটি ঐতিহাসিক মুহূর্ত।" },
+                { q: "কাকে SEBI-এর Executive Director নিয়োগ করা হয়েছে?", o: ["নিরুপম কামাল", "সুনীল জয়বন্ত কদম", "অজয় কুমার ভাট", "অমিতাভ কান্ত"], a: 1, ex: "সুনীল জয়বন্ত কদমকে সিকিউরিটিজ অ্যান্ড এক্সচেঞ্জ বোর্ড অফ ইন্ডিয়া (SEBI)-এর নতুন নির্বাহী পরিচালক হিসেবে নিয়োগ করা হয়েছে।" },
+                { q: "কাকে Kho Kho Federation of India-এর প্রেসিডেন্ট হিসেবে নির্বাচিত করা হয়েছে?", o: ["সুধাংশু মিত্তল", "উমেশ প্যাটেল", "নীলম দাস", "আকাশ দুবে"], a: 0, ex: "সুধাংশু মিত্তলকে আবারও খো খো ফেডারেশন অফ ইন্ডিয়া (KKFI)-এর প্রেসিডেন্ট হিসেবে সর্বসম্মতিক্রমে নির্বাচিত করা হয়েছে। এটি তার তৃতীয় মেয়াদ।" },
+                { q: "BRICS CCI Women's Wing (2025-2027)-এর সহ-সভাপতি কে নিযুক্ত হয়েছেন?", o: ["প্রিয়াঙ্কা Kakkar", "প্রীতি জয়সওয়াল", "শিবানী চৌহান", "রেখা শর্মা"], a: 0, ex: "প্রিয়াঙ্কা Kakkar-কে BRICS চেম্বার অফ কমার্স অ্যান্ড ইন্ডাস্ট্রির মহিলা শাখার (Women's Wing) সহ-সভাপতি হিসেবে নিযুক্ত করা হয়েছে।" },
+                { q: "29তম এশিয়ান যুব টেবিল টেনিস চ্যাম্পিয়নশিপে অনূর্ধ্ব-15 বালিকা এককে কে স্বর্ণপদক জিতেছে?", o: ["Swastika Ghosh", "Yashaswini Ghorpade", "Divyanshi Bhowmick", "Suhana Saini"], a: 2, ex: "ভারতের দিব্যাংশী ভৌমিক চীনের ঝু কিহুইকে পরাজিত করে 29তম এশিয়ান যুব টেবিল টেনিস চ্যাম্পিয়নশিপে অনূর্ধ্ব-15 বালিকা এককে স্বর্ণপদক জিতেছেন।" },
+                { q: "কোন দেশের বিরুদ্ধে তরুণ ভারতীয় ব্যাটসম্যান বৈভব সূর্যবংশী রেকর্ডব্রেকিং দ্রুততম সেঞ্চুরি করেছেন?", o: ["Australia", "South Africa", "England", "New Zealand"], a: 2, ex: "১৪ বছর বয়সী ভারতীয় ব্যাটসম্যান বৈভব সূর্যবংশী যুব ওয়ানডেতে ইংল্যান্ডের বিরুদ্ধে মাত্র ৫২ বলে দ্রুততম সেঞ্চুরি করে রেকর্ড করেছেন।" },
+                { q: "কে 2025 গ্র্যান্ড চেস ট্যুরের র‍্যাপিড এবং ব্লিটজ টুর্নামেন্টে র‍্যাপিড খেতাব জিতেছে?", o: ["Vidit Gujrathi", "Arjun Erigaisi", "Nihal Sarin", "Gukesh Dommaraju"], a: 3, ex: "বর্তমান বিশ্ব চ্যাম্পিয়ন ভারতের গুকেশ ডোম্মারাজু ক্রোয়েশিয়ার জাগ্রেবে অনুষ্ঠিত গ্র্যান্ড চেস ট্যুরের র‍্যাপিড খেতাব জিতেছেন।" },
+                { q: "এশিয়ান জুনিয়র স্কোয়াশ চ্যাম্পিয়নশিপে ছেলেদের অনূর্ধ্ব-17 খেতাব জিতে ভারতের ১৩ বছরের অপেক্ষার অবসান ঘটাল কে?", o: ["Ayaan Dhanuka", "Nikhileswar Moganasundharam", "Aryaveer Dewan", "Cheung TC"], a: 2, ex: "আর্যবীর দেওয়ান এশিয়ান জুনিয়র স্কোয়াশ চ্যাম্পিয়নশিপে ছেলেদের অনূর্ধ্ব-১৭ বিভাগে স্বর্ণপদক জিতে ভারতের ১৩ বছরের খরা কাটিয়েছেন।" },
+                { q: "চতুর্দশ দলাই লামার নতুন জীবনীর শিরোনাম কী, যা ২০২৫ সালের সেপ্টেম্বরে প্রকাশিত হবে?", o: ["Life of a Monk", "The Himalayan Journey", "Eternal Light", "Light of Asia"], a: 2, ex: "চতুর্দশ দলাই লামার ৯০তম জন্মদিন উপলক্ষে তাঁর নতুন জীবনী 'Eternal Light: The Life and Times of His Holiness the 14th Dalai Lama' প্রকাশিত হতে চলেছে। এটি লিখেছেন অরবিন্দ যাদব।" },
+
+                // Set 4: Questions 49-64
+                { q: "গিনি সূচকের ভিত্তিতে বিশ্বব্যাংক দ্বারা বিশ্বের সবচেয়ে সমতাপূর্ণ সমাজগুলির মধ্যে ভারতের স্থান কত?", o: ["চতুর্থ", "তৃতীয়", "দ্বিতীয়", "পঞ্চম"], a: 0, ex: "বিশ্বব্যাংকের গিনি সূচক অনুযায়ী, ভারত বিশ্বের চতুর্থ সবচেয়ে সমতাপূর্ণ দেশ হিসেবে স্থান পেয়েছে। ভারতের স্কোর ২৫.৫।" },
+                { q: "কোন ভারতীয় সংস্থা দেশের প্রথম দেশীয় প্রতিরক্ষা ড্রোন সিমুলেটর বিকাশের জন্য পেটেন্ট পেয়েছে?", o: ["Bharat Electronics Limited (BEL)", "Hindustan Aeronautics Limited (HAL)", "IG Drones", "DRDO"], a: 2, ex: "ওড়িশা-ভিত্তিক স্টার্টআপ IG Drones ভারতের প্রথম দেশীয় প্রতিরক্ষা ড্রোন সিমুলেটর তৈরির জন্য পেটেন্ট পেয়েছে।" },
+                { q: "কোন ব্যাংক LIC-এর জীবন বীমা পণ্য বিতরণের জন্য লাইফ ইন্স্যুরেন্স কর্পোরেশন অফ ইন্ডিয়ার সাথে অংশীদারিত্ব করেছে?", o: ["Bandhan Bank", "Ujjivan Small Finance Bank", "AU Small Finance Bank", "Jana Small Finance Bank"], a: 2, ex: "AU স্মল ফিনান্স ব্যাংক তার নেটওয়ার্ক জুড়ে LIC-এর জীবন বীমা পণ্যগুলি বিতরণ করার জন্য LIC-এর সাথে একটি চুক্তি করেছে।" },
+                { q: "কোন ব্যাংক ভারতে MSMEs-কে ক্ষমতায়নের জন্য 'INDIE for Business' প্ল্যাটফর্ম চালু করেছে?", o: ["HDFC Bank", "Axis Bank", "IndusInd Bank", "ICICI Bank"], a: 2, ex: "IndusInd ব্যাংক ভারতের ক্ষুদ্র, ছোট ও মাঝারি উদ্যোগগুলিকে (MSMEs) ডিজিটাল ব্যাঙ্কিং সমাধান দেওয়ার জন্য 'INDIE for Business' প্ল্যাটফর্ম চালু করেছে।" },
+                { q: "কোন দুটি দেশ সম্প্রতি নিউ ডেভেলপমেন্ট ব্যাংক (NDB)-এ যোগদান করেছে, এর সদস্য সংখ্যা বাড়িয়ে ১১ করেছে?", o: ["Argentina and Kenya", "Saudi Arabia and Indonesia", "Colombia and Uzbekistan", "Turkey and Vietnam"], a: 2, ex: "কলম্বিয়া এবং উজবেকিস্তান আনুষ্ঠানিকভাবে নিউ ডেভেলপমেন্ট ব্যাংক (NDB)-এর নতুন সদস্য হয়েছে, যার ফলে ব্যাংকের মোট সদস্য সংখ্যা ১১-তে পৌঁছেছে।" },
+                { q: "ফিনটেক কোম্পানি Slice ভারতের প্রথম UPI-Powered Bank Branch খুলেছে কোথায়?", o: ["বেঙ্গালুরু", "দিল্লী", "গুয়াহাটি", "হায়দ্রাবাদ"], a: 0, ex: "ফিনটেক সংস্থা Slice বেঙ্গালুরুর কোরামঙ্গলা এলাকায় ভারতের প্রথম UPI-চালিত ব্যাংক শাখা খুলেছে, যেখানে সমস্ত লেনদেন কার্ড বা কাগজ ছাড়াই UPI-এর মাধ্যমে করা যায়।" },
+                { q: "Global Satellite Deployment 2025-এ প্রথম স্থানে আছে আমেরিকা, ভারতের স্থান কত?", o: ["চতুর্থ", "পঞ্চম", "সপ্তম", "তৃতীয়"], a: 2, ex: "গ্লোবাল স্যাটেলাইট ডেপ্লয়মেন্টের তালিকায় ৮,৫৩০টি স্যাটেলাইট নিয়ে মার্কিন যুক্তরাষ্ট্র প্রথম স্থানে রয়েছে। ভারত ১৩৬টি স্যাটেলাইট নিয়ে সপ্তম স্থানে রয়েছে।" },
+                { q: "কোন সংস্থা ভারতের প্রথম দেশীয় ফোটোনিক রাডার সফলভাবে তৈরি করেছে?", o: ["Hindustan Aeronautics Limited (HAL)", "Defence Research & Development Organisation (DRDO)", "Bharat Electronics Limited (BEL)", "Bharat Dynamics Limited (BDL)"], a: 1, ex: "ডিফেন্স রিসার্চ অ্যান্ড ডেভেলপমেন্ট অর্গানাইজেশন (DRDO) ভারতের প্রথম দেশীয় ফোটোনিক রাডার সফলভাবে তৈরি করেছে, যা প্রচলিত রাডারের চেয়ে অনেক বেশি শক্তিশালী এবং নির্ভুল।" },
+                { q: "গাড়ি দুর্ঘটনায় প্রয়াত পর্তুগালের ফরোয়ার্ড ডিয়োগো জোটা কোন ইংলিশ প্রিমিয়ার লিগ ক্লাবের হয়ে খেলতেন?", o: ["Manchester United", "Chelsea", "Liverpool", "Arsenal"], a: 2, ex: "মাত্র ২৮ বছর বয়সে স্পেনে এক গাড়ি দুর্ঘটনায় প্রয়াত হয়েছেন পর্তুগাল এবং লিভারপুল ক্লাবের তারকা ফরোয়ার্ড ডিয়োগো জোটা।" },
+                { q: "২০২৫ সালের জুলাই মাসে প্রয়াত বিখ্যাত হিপনোটিস্ট কে?", o: ["বি.ভি. পট্টভিরাম", "সুধীর কক্কর", "দীপক চোপড়া", "অমিত গোস্বামী"], a: 0, ex: "ভারতের অন্যতম বিখ্যাত হিপনোটিস্ট ও মনোবিজ্ঞানী ডঃ বি.ভি. পট্টভিরাম ৭৫ বছর বয়সে প্রয়াত হয়েছেন।" },
+                { q: "ভারতের প্রথম বেসরকারি স্যাটেলাইট ব্রডব্যান্ড পরিষেবা চালু করার অনুমোদন পেল কোন সংস্থা?", o: ["Ananth Technologies", "Starlink", "OneWeb", "Project Kuiper"], a: 0, ex: "হায়দ্রাবাদ-ভিত্তিক সংস্থা Ananth Technologies দেশের প্রথম বেসরকারি স্যাটেলাইট ব্রডব্যান্ড পরিষেবা চালু করার জন্য IN-SPACe থেকে অনুমোদন পেয়েছে।" },
+                { q: "ওড়িশার ষষ্ঠতম পৌর কর্পোরেশন হিসেবে কোন শহরকে ঘোষণা করা হয়েছে?", o: ["পুরী", "ভুবনেশ্বর", "কটক", "রাউরকেলা"], a: 0, ex: "ভুবনেশ্বর, কটক, সম্বলপুর, বেরহামপুর এবং রাউরকেলার পর পুরী ওড়িশা রাজ্যের ষষ্ঠ পৌর কর্পোরেশন হতে চলেছে।" },
+                { q: "বিশ্বব্যাংকের Gini Index অনুযায়ী, ভারতকে বিশ্বের কততম 'Most Equal Country' হিসেবে স্থান দেওয়া হয়েছে?", o: ["তৃতীয়", "চতুর্থ", "পঞ্চম", "ষষ্ঠ"], a: 1, ex: "বিশ্বব্যাংকের দ্বারা প্রকাশিত গিনি সূচকের ভিত্তিতে, ভারতকে বিশ্বের চতুর্থ সবচেয়ে সমতাপূর্ণ দেশ (Most Equal Country) হিসেবে স্থান দেওয়া হয়েছে।" },
+                { q: "রেশন বিতরণের জন্য আধার-ভিত্তিক ফেস অথেন্টিকেশন চালু করা ভারতের প্রথম রাজ্য কোনটি?", o: ["হিমাচল প্রদেশ", "উত্তরাখণ্ড", "পাঞ্জাব", "হরিয়ানা"], a: 0, ex: "হিমাচল প্রদেশ পাবলিক ডিস্ট্রিবিউশন সিস্টেমের (PDS) অধীনে রেশন বিতরণের জন্য আধার-ভিত্তিক ফেস অথেন্টিকেশন চালুকারী ভারতের প্রথম রাজ্য হয়েছে।" },
+                { q: "সম্প্রতি সুরিনামের প্রথম মহিলা রাষ্ট্রপতি হিসেবে কে নির্বাচিত হয়েছেন?", o: ["জেনিফার সিমন্স", "ক্রিস্টিন লাগার্দ", "উরসুলা ভন ডার লেন", "কমলা হ্যারিস"], a: 0, ex: "জেনিফার গিয়ারলিংস-সিমন্স সুরিনামের প্রথম মহিলা রাষ্ট্রপতি নির্বাচিত হয়ে ইতিহাস তৈরি করেছেন। সুরিনাম দক্ষিণ আমেরিকার একটি দেশ, যার রাজধানী পারামারিবো।" },
+                { q: "'আমেরিকা পার্টি' নামে নতুন রাজনৈতিক দল গঠনের ঘোষণা কে দিয়েছেন?", o: ["ইলন মাস্ক", "জেফ বেজোস", "মার্ক জুকারবার্গ", "বিল গেটস"], a: 0, ex: "টেসলা, স্পেসএক্স এবং এক্স (টুইটার)-এর কর্ণধার ইলন মাস্ক 'আমেরিকা পার্টি' নামে একটি নতুন রাজনৈতিক দল গঠনের ঘোষণা দিয়েছেন।" }
+            ];
+
+            const mcqContainer = document.getElementById('mcq-container');
+            const mcqSetSelector = document.getElementById('mcqSetSelector');
+            const scoreTracker = document.getElementById('score-tracker');
+            
+            let score = 0;
+            let totalQuestionsInSet = 0;
+
+            function generateMCQs(setNumber) {
+                mcqContainer.innerHTML = '';
+                score = 0;
+                
+                const questionsPerSet = 16;
+                const start = (setNumber - 1) * questionsPerSet;
+                const end = Math.min(start + questionsPerSet, mcqData.length);
+                const questionSet = mcqData.slice(start, end);
+
+                totalQuestionsInSet = questionSet.length;
+                updateScoreDisplay();
+
+                questionSet.forEach((item, index) => {
+                    const globalIndex = start + index;
+                    const questionDiv = document.createElement('div');
+                    questionDiv.className = 'mcq-question';
+                    questionDiv.id = `q-${globalIndex}`;
+                    
+                    let optionsHTML = item.o.map((option, i) => 
+                        `<div class="mcq-option" data-index="${i}">${String.fromCharCode(65 + i)}) ${option}</div>`
+                    ).join('');
+                    
+                    questionDiv.innerHTML = `
+                        <h4>প্রশ্ন ${globalIndex + 1}: ${item.q}</h4>
+                        <div class="mcq-options">${optionsHTML}</div>
+                        <div class="mcq-explanation"><strong>ব্যাখ্যা:</strong> ${item.ex}</div>
+                    `;
+                    mcqContainer.appendChild(questionDiv);
+                });
+                setupOptionListeners();
+                setupIntersectionObserver();
+            }
+            
+            function updateScoreDisplay() {
+                scoreTracker.textContent = `স্কোর: ${score} / ${totalQuestionsInSet}`;
+            }
+
+            function handleOptionClick(e) {
+                const selectedOption = e.target.closest('.mcq-option');
+                if (!selectedOption) return;
+                const questionDiv = selectedOption.closest('.mcq-question');
+                if (questionDiv.classList.contains('answered')) return;
+                questionDiv.classList.add('answered');
+                const globalIndex = parseInt(questionDiv.id.split('-')[1]);
+                const selectedIndex = parseInt(selectedOption.dataset.index);
+                const correctIndex = mcqData[globalIndex].a;
+                if (selectedIndex === correctIndex) {
+                    selectedOption.classList.add('correct');
+                    correctSound.play().catch(e => console.log("Audio play failed: " + e));
+                    score++;
+                    updateScoreDisplay();
+                } else {
+                    selectedOption.classList.add('incorrect');
+                    wrongSound.play().catch(e => console.log("Audio play failed: " + e));
+                    questionDiv.querySelector(`.mcq-option[data-index="${correctIndex}"]`).classList.add('correct');
+                }
+                questionDiv.querySelector('.mcq-explanation').style.display = 'block';
+            }
+
+            function setupOptionListeners() {
+                mcqContainer.addEventListener('click', handleOptionClick);
+            }
+            
+            mcqSetSelector.addEventListener('change', (e) => {
+                generateMCQs(parseInt(e.target.value, 10));
+            });
+
+            document.addEventListener('keydown', (e) => {
+                const activeQuestion = document.querySelector('.mcq-question.active-question');
+                if (!activeQuestion) return;
+                
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    const nextQuestion = activeQuestion.nextElementSibling;
+                    if (nextQuestion) {
+                        nextQuestion.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                } else if (['1', '2', '3', '4'].includes(e.key) && !activeQuestion.classList.contains('answered')) {
+                    e.preventDefault();
+                    const optionIndex = parseInt(e.key) - 1;
+                    const optionToClick = activeQuestion.querySelector(`.mcq-option[data-index="${optionIndex}"]`);
+                    if (optionToClick) {
+                        optionToClick.click();
+                    }
+                }
+            });
+
+            function setupIntersectionObserver() {
+                const questions = document.querySelectorAll('.mcq-question');
+                if (questions.length === 0) return;
+                
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const prevActive = document.querySelector('.mcq-question.active-question');
+                            if (prevActive) prevActive.classList.remove('active-question');
+                            entry.target.classList.add('active-question');
+                        }
+                    });
+                }, { rootMargin: '-40% 0px -40% 0px', threshold: 0 });
+                questions.forEach(q => observer.observe(q));
+            }
+            
+            generateMCQs(1); // Load the first set of questions initially
+        });
+    </script>
+</body>
+</html>
