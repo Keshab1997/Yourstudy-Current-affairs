@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="bn">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>কুইজ সেট ৫ - সাম্প্রতিক ঘটনাবলী</title>
+
+        <!-- প্রয়োজনীয় CDN এবং ফাইল লিঙ্ক -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        />
+
+        <!-- আপনার প্রজেক্টের কুইজ CSS ফাইল -->
+        <link rel="stylesheet" href="../css/quiz_style.css" />
+
+        <!-- === Firebase Script Section === -->
+        <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
+
+        <!-- আপনার প্রজেক্টের Firebase কনফিগারেশন ফাইল -->
+        <script src="../js/firebase-config.js"></script>
+        <!-- === End of Firebase Script Section === -->
+    </head>
+    <body class="day-mode">
+        <main class="quiz-page-container">
+            <header class="quiz-header">
+                <h1 id="quiz-title">লোড হচ্ছে...</h1>
+                <div class="score-board">
+                    <span id="correct-count">✔️ 0</span>
+                    <span id="wrong-count">❌ 0</span>
+                    <span id="timer">00:00</span>
+                </div>
+                <button id="mode-toggle" class="mode-toggle-btn">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </header>
+
+            <div id="quiz-container">
+                <!-- JavaScript দিয়ে প্রশ্ন এখানে লোড হবে -->
+            </div>
+
+            <div class="page-navigation">
+                <a href="Qset4.html" class="btn btn-secondary"
+                    ><i class="fas fa-arrow-left"></i> পূর্ববর্তী</a
+                >
+                <a href="../index.html" class="btn btn-primary"
+                    ><i class="fas fa-home"></i> হোম</a
+                >
+                <a href="#" class="btn btn-secondary disabled"
+                    >পরবর্তী <i class="fas fa-arrow-right"></i
+                ></a>
+            </div>
+        </main>
+
+        <script>
+            const quizSet = {
+                chapterName: "YOURSTUDY Current Affairs",
+                setName: "Quiz Set 5(6July-12July)",
+                name: "সাপ্তাহিক কারেন্ট অ্যাফেয়ার্স (৬-১২ জুলাই) - Set 5",
+                questions: [
+                    {
+                        question:
+                            "International Cricket Council (ICC)-এর নতুন প্রধান নির্বাহী কর্মকর্তা (CEO) হিসেবে কে নিযুক্ত হয়েছেন?",
+                        options: [
+                            "Jay Shah",
+                            "Manu Sawhney",
+                            "সঞ্জোগ গুপ্তা",
+                            "Geoff Allardice",
+                        ],
+                        answer: 2,
+                        explanation:
+                            "সঞ্জোগ গুপ্তা (Sanjog Gupta) ICC-এর নতুন CEO হিসেবে নিযুক্ত হয়েছেন।\nICC গঠন: 15 জুন 1909\nসদর দপ্তর: দুবাই, UAE\nচেয়ারম্যান: জয় শাহ",
+                    },
+                    {
+                        question:
+                            "জেনিফার সিমন্স কোন দেশের প্রথম মহিলা রাষ্ট্রপতি হয়ে ইতিহাস তৈরি করেছেন?",
+                        options: ["গায়ানা", "সুরিনাম", "ভেনিজুয়েলা", "চিলি"],
+                        answer: 1,
+                        explanation:
+                            "জেনিফার সিমন্স (Jennifer Geerlings-Simons) সুরিনামের প্রথম নারী প্রেসিডেন্ট নির্বাচিত হয়েছেন।",
+                    },
+                    {
+                        question:
+                            "কাকে Kho Kho Federation of India-এর প্রেসিডেন্ট হিসেবে নির্বাচিত করা হলো?",
+                        options: [
+                            "সুধাংশু মিত্তল",
+                            "উমেশ প্যাটেল",
+                            "নিলেম দাস",
+                            "আকাশ দুবে",
+                        ],
+                        answer: 0,
+                        explanation:
+                            "সুধাংশু মিত্তলকে আবারও Kho Kho Federation of India (KKFI)-এর President হিসেবে নির্বাচিত করা হয়েছে। এটি তাঁর তৃতীয় মেয়াদ।",
+                    },
+                    {
+                        question:
+                            "BRICS CCI Women's Wing (2025-2027)-এর সহ-সভাপতি নিযুক্ত হলেন কে?",
+                        options: [
+                            "প্রিয়াঙ্কা Kakkar",
+                            "প্রীতি জয়সওয়াল",
+                            "শিবানী চৌহান",
+                            "রেখা শর্মা",
+                        ],
+                        answer: 0,
+                        explanation:
+                            "প্রিয়াঙ্কা Kakkar BRICS CCI Women's Wing (2025-2027)-এর সহ-সভাপতি নিযুক্ত হয়েছেন।\nBRICS+ সদস্য দেশ: Brazil, Russia, India, China, South Africa, Iran, Egypt, Ethiopia, UAE, Indonesia.",
+                    },
+                    {
+                        question:
+                            "29তম এশিয়ান যুব টেবিল টেনিস চ্যাম্পিয়নশিপে অনূর্ধ্ব-15 বালিকা এককে কে স্বর্ণপদক জিতেছে?",
+                        options: [
+                            "Swastika Ghosh",
+                            "Yashaswini Ghorpade",
+                            "দিব্যাংশী ভৌমিক",
+                            "Suhana Saini",
+                        ],
+                        answer: 2,
+                        explanation:
+                            "ভারতের দিব্যাংশী ভৌমিক (Divyanshi Bhowmick) চীনের তু কিহিকে পরাজিত করে 29তম এশিয়ান যুব টেবিল টেনিস চ্যাম্পিয়নশিপে স্বর্ণপদক জিতেছেন।",
+                    },
+                    {
+                        question:
+                            "তরুণ ভারতীয় ব্যাটসম্যান বৈভব সূর্যবংশী কোন দেশের বিরুদ্ধে রেকর্ড ব্রেকিং দ্রুততম সেঞ্চুরি করেছেন?",
+                        options: [
+                            "অস্ট্রেলিয়া",
+                            "দক্ষিণ আফ্রিকা",
+                            "ইংল্যান্ড",
+                            "নিউজিল্যান্ড",
+                        ],
+                        answer: 2,
+                        explanation:
+                            "ভারতের 14 বছর বয়সী বৈভব সূর্যবংশী ওরচেস্টারে ইংল্যান্ডের বিরুদ্ধে মাত্র 52 বলে সেঞ্চুরি করে যুব ওয়ানডেতে দ্রুততম সেঞ্চুরির রেকর্ড করেছেন।",
+                    },
+                    {
+                        question:
+                            "ক্রোয়েশিয়ার জাগ্রেবে 2025 গ্র্যান্ড চেস ট্যুরের র‍্যাপিড এবং ব্লিটজ টুর্নামেন্টে কে জিতেছে?",
+                        options: [
+                            "Vidit Gujrathi",
+                            "Arjun Erigaisi",
+                            "Nihal Sarin",
+                            "গুকেশ ডোম্মারাজু",
+                        ],
+                        answer: 3,
+                        explanation:
+                            "বর্তমান বিশ্ব চ্যাম্পিয়ন গুকেশ ডোম্মারাজু (Gukesh Dommaraju) ক্রোয়েশিয়ার জাগ্রেবে 2025 গ্র্যান্ড চেস ট্যুর জিতেছেন।",
+                    },
+                    {
+                        question:
+                            "এশিয়ান জুনিয়র স্কোয়াশ চ্যাম্পিয়নশিপে ছেলেদের অনূর্ধ্ব-17 খেতাব জিতে ভারতের 13 বছরের অপেক্ষার অবসান ঘটালো কে?",
+                        options: [
+                            "Ayaan Dhanuka",
+                            "Nikhileswar Moganasundharam",
+                            "আর্যবীর দেওয়ান",
+                            "Cheung TC",
+                        ],
+                        answer: 2,
+                        explanation:
+                            "আর্যবীর দেওয়ান (Aryaveer Dewan) এশিয়ান জুনিয়র স্কোয়াশ চ্যাম্পিয়নশিপে ছেলেদের অনূর্ধ্ব-17 খেতাব জিতে ভারতের 13 বছরের অপেক্ষার অবসান ঘটিয়েছেন।",
+                    },
+                    {
+                        question:
+                            "চতুর্দশ দলাই লামার নতুন জীবনীর শিরোনাম কী, যা 2025 সালের সেপ্টেম্বরে প্রকাশিত হবে?",
+                        options: [
+                            "Life of a Monk",
+                            "The Himalayan Journey",
+                            "Eternal Light",
+                            "Light of Asia",
+                        ],
+                        answer: 2,
+                        explanation:
+                            "চতুর্দশ দলাই লামার নতুন জীবনীর শিরোনাম 'Eternal Light: The Life and Times of His Holiness the 14th Dalai Lama'।\nলেখক: প্রবীণ সাংবাদিক অরবিন্দ যাদব।",
+                    },
+                    {
+                        question:
+                            "গিনি সূচকের ভিত্তিতে বিশ্ব ব্যাংক দ্বারা বিশ্বের সবচেয়ে সমতাপূর্ণ সমাজগুলির মধ্যে ভারতের স্থান কত?",
+                        options: ["চতুর্থ", "তৃতীয়", "দ্বিতীয়", "পঞ্চম"],
+                        answer: 0,
+                        explanation:
+                            "বিশ্ব ব্যাংকের গিনি সূচক অনুযায়ী, ভারত বিশ্বের চতুর্থ সবচেয়ে সমতাপূর্ণ সমাজ।\nভারতের গিনি স্কোর (2025): 25.5\n(যেখানে 0 = নিখুঁত সমতা এবং 100 = নিখুঁত বৈষম্য)",
+                    },
+                    {
+                        question:
+                            "কোন ভারতীয় সংস্থা দেশের প্রথম দেশীয় প্রতিরক্ষা ড্রোন সিমুলেটর বিকাশের জন্য পেটেন্ট পেয়েছে?",
+                        options: ["BEL", "HAL", "IG Drones", "DRDO"],
+                        answer: 2,
+                        explanation:
+                            "IG Drones দেশের প্রথম দেশীয় প্রতিরক্ষা ড্রোন সিমুলেটর বিকাশের জন্য পেটেন্ট পেয়েছে। এটি ভারতীয় সশস্ত্র বাহিনীর জন্য বাস্তবসম্মত প্রশিক্ষণ প্রদান করবে।",
+                    },
+                    {
+                        question:
+                            "কোন ব্যাংক তার জীবন বীমা পণ্য বিতরণের জন্য LIC-এর সাথে অংশীদারিত্ব করেছে?",
+                        options: [
+                            "Bandhan Bank",
+                            "Ujjivan Small Finance Bank",
+                            "AU Small Finance Bank",
+                            "Jana Small Finance Bank",
+                        ],
+                        answer: 2,
+                        explanation:
+                            "AU Small Finance Bank তার ব্যাংকিং আউটলেটের মাধ্যমে LIC-এর বীমা পণ্য বিতরণের জন্য অংশীদারিত্ব করেছে।",
+                    },
+                    {
+                        question:
+                            "কোন ব্যাংক ভারতে MSME-কে ক্ষমতায়নের জন্য 'INDIE for Business' প্ল্যাটফর্ম চালু করেছে?",
+                        options: [
+                            "HDFC Bank",
+                            "Axis Bank",
+                            "IndusInd Bank",
+                            "ICICI Bank",
+                        ],
+                        answer: 2,
+                        explanation:
+                            "IndusInd Bank ভারতে MSME-দের জন্য ডিজিটাল ব্যাংকিং সমাধান 'INDIE for Business' প্ল্যাটফর্ম চালু করেছে।",
+                    },
+                    {
+                        question:
+                            "কোন দুটি দেশ সম্প্রতি New Development Bank (NDB)-এ যোগদান করেছে, যার ফলে এর সদস্য সংখ্যা বেড়ে 11 হয়েছে?",
+                        options: [
+                            "Argentina and Kenya",
+                            "Saudi Arabia and Indonesia",
+                            "Colombia and Uzbekistan",
+                            "Turkey and Vietnam",
+                        ],
+                        answer: 2,
+                        explanation:
+                            "কলম্বিয়া এবং উজবেকিস্তান সম্প্রতি New Development Bank (NDB)-এ যোগদান করেছে, যার সদস্য সংখ্যা এখন 11।\nNDB সদর দপ্তর: সাংহাই, চীন।",
+                    },
+                    {
+                        question:
+                            "ফিনটেক কোম্পানি Slice ভারতের প্রথম UPI-Powered Bank Branch খুলেছে কোথায়?",
+                        options: [
+                            "বেঙ্গালুরু",
+                            "দিল্লী",
+                            "গুয়াহাটি",
+                            "হায়দ্রাবাদ",
+                        ],
+                        answer: 0,
+                        explanation:
+                            "Slice বেঙ্গালুরুর কোরামঙ্গলা এলাকায় ভারতের প্রথম UPI-Powered Bank Branch খুলেছে।\nশাখার বৈশিষ্ট্য: UPI ATM, ডিজিটাল কিয়স্ক, কার্ডবিহীন এবং কাগজবিহীন ব্যাংকিং।",
+                    },
+                    {
+                        question:
+                            "Global Satellite Deployment 2025-এ প্রথম স্থানে আছে আমেরিকা, ভারতের স্থান কত?",
+                        options: ["চতুর্থ", "পঞ্চম", "সপ্তম", "তৃতীয়"],
+                        answer: 2,
+                        explanation:
+                            "Global Satellite Deployment 2025 অনুযায়ী, মোট 136টি স্যাটেলাইট নিয়ে ভারত বিশ্বে সপ্তম স্থানে রয়েছে।\nশীর্ষ দেশ: যুক্তরাষ্ট্র (8,530), রাশিয়া (1,559), চীন (906)।",
+                    },
+                    {
+                        question:
+                            "কোন সংস্থা ভারতের প্রথম দেশীয় ফোটোনিক রাডার সফলভাবে তৈরি করেছে?",
+                        options: ["HAL", "DRDO", "BEL", "BDL"],
+                        answer: 1,
+                        explanation:
+                            "DRDO ভারতের প্রথম দেশীয় ফোটোনিক রাডার সফলভাবে তৈরি করেছে।\nফোটোনিক রাডার: এটি রেডিও ওয়েভের পরিবর্তে আলোর কণা (ফোটন) ব্যবহার করে, যা স্টেলথ যুদ্ধবিমান ও ড্রোন শনাক্ত করতে সক্ষম।",
+                    },
+                    {
+                        question:
+                            "মাত্র 28 বছর বয়সে গাড়ি দুর্ঘটনায় মারা গেছেন পর্তুগালের ফরোয়ার্ড ডিওগো জোটা। মৃত্যুর আগে তিনি কোন ক্লাবে খেলতেন?",
+                        options: [
+                            "Manchester United",
+                            "Chelsea",
+                            "লিভারপুল",
+                            "Arsenal",
+                        ],
+                        answer: 2,
+                        explanation:
+                            "পর্তুগালের ফরোয়ার্ড ডিওগো জোটা মৃত্যুর আগে ইংলিশ প্রিমিয়ার লীগের ক্লাব লিভারপুলের হয়ে খেলতেন।",
+                    },
+                    {
+                        question:
+                            "2025 সালের জুলাই মাসে প্রয়াত বিখ্যাত হিপনোটিস্ট কে?",
+                        options: [
+                            "বি.ভি. পট্টভিরাম",
+                            "সুধীর Kakkar",
+                            "দীপক চোপড়া",
+                            "অমিত গোস্বামী",
+                        ],
+                        answer: 0,
+                        explanation:
+                            "75 বছর বয়সে প্রয়াত হয়েছেন ভারতের অন্যতম বিখ্যাত হিপনোটিস্ট ও মনোবিজ্ঞানী বি.ভি. পট্টভিরাম। তিনি হিপনোসিস ও সাবকনশাস মাইন্ড নিয়ে গবেষণার পথিকৃৎ ছিলেন।",
+                    },
+                ],
+            };
+        </script>
+
+        <script src="../js/quiz_script.js"></script>
+    </body>
+</html>
